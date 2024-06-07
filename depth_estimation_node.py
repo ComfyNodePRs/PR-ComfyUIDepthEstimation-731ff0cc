@@ -3,7 +3,6 @@ import numpy as np
 import torch
 from transformers import pipeline
 from PIL import Image, ImageFilter, ImageOps
-from comfy.nodes import Node, register_node
 from comfy.utils import common_annotator_call, create_node_input_types
 import comfy.model_management as model_management
 
