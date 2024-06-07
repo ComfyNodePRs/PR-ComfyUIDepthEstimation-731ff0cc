@@ -41,6 +41,7 @@ class DepthEstimationNode(Node):
         self.median_size = ensure_odd(median_size)
         self.device = 0 if device == "gpu" and torch.cuda.is_available() else -1
         self.pipe = pipeline(task="depth-estimation", model="LiheYoung/depth-anything-large-hf", device=self.device)
+        print(f"DepthEstimationNode initialized with device: {self.device}")
 
     def process_image(self, image):
         if self.device == 0:
@@ -103,6 +104,7 @@ class ComfyUIDepthEstimationNode(DepthEstimationNode):
         super().__init__(blur_radius=2.0, median_size=5, device="cpu")
 
     def execute(self, image_path: str, output_path: str):
+        print(f"Executing DepthEstimationNode on image: {image_path}")
         final_image = self.forward(image_path)
         final_image.save(output_path)
         print(f"Processed and saved: {output_path}")
