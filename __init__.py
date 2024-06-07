@@ -1,4 +1,4 @@
-from .comfyui_depth_estimation import ComfyUIDepthEstimationNode
+from .depth_estimation_node import ComfyUIDepthEstimationNode
 
 NODE_CLASS_MAPPINGS = {
     "ComfyUIDepthEstimationNode": ComfyUIDepthEstimationNode
