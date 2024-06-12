@@ -1,4 +1,4 @@
-transformers==4.12.3
-Pillow==8.4.0
-numpy==1.21.2
-# Add other necessary dependencies without specifying torch again
+# Custom node specific dependencies
+numpy>=1.24.2
+transformers>=4.25.1
+
